@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    data_uri (0.0.3)
+    data_uri (0.0.4)
 
 GEM
   remote: https://rubygems.org/
@@ -14,5 +14,8 @@ PLATFORMS
 
 DEPENDENCIES
   data_uri!
-  minitest
-  rake
+  minitest (~> 5.2)
+  rake (~> 10.1)
+
+BUNDLED WITH
+   2.3.11

@@ -29,7 +29,7 @@ describe URI::Data do
     end
 
     it "should open on Kernel.open" do
-      open(@uri).read.must_equal @uri.data
+      @uri.open.read.must_equal @uri.data
     end
 
   end

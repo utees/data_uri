@@ -37,7 +37,7 @@ module URI
         raise URI::InvalidURIError.new('Invalid data URI')
       end
       @data = @data[1 .. -1]
-      @data = base64 ? Base64.decode64(@data) : URI.decode(@data)
+      @data = base64 ? Base64.decode64(@data) : URI.decode_www_form_component(@data)
       if @data.respond_to?(:force_encoding) && charset = @mime_params['charset']
         @data.force_encoding(charset)
       end
@@ -61,6 +61,6 @@ module URI
     end
   end
 
-  @@schemes['DATA'] = Data
+  register_scheme 'DATA', Data
 
 end
